@@ -1,5 +1,12 @@
 # KJMoreTargetDemo
-一个工程多个项目Demo  
+####应用场景：很多时候我们可能会有用户版和管理员版，但是他们之间很多代码通用，这是就可以采用这种方式去处理  
+同工程里面创建两个Target，然后通过判断Target来修改代码，这样都是基于同一套代码做修改，只是部分不相同的地方通过Target来添加不同代码，后期修改维护成本低     
+
+-----
+<font color=#FF0000 size=3>* 啤酒Demo 和 鱼Demo 就是两个对应的项目</font>
+<p align="left">
+  <img width="200" src="Res/691571909388.jpg" hspace="1px" />
+</p>
 
 ----------------------------------------
 ### 框架整体介绍
@@ -39,54 +46,57 @@ pod 'KJLoadingAnimation' # 加载控件
 
 #### <a id="使用方法"></a>使用方法
 #####一、创建两个Target  
-1、拷贝一份新的Target
+######1、拷贝一份新的Target
 <p align="left">
   <img width="500" src="Res/WX20191024-151959@2x.png" hspace="1px" />
 </p>
-2、修改不同Target对应的不同的 Scheme, info.plist等等数据
+######2、修改不同Target对应的不同的 Scheme、info.plist等等数据  
+`Build Settings`当中`Packaging`设置info.plist路径
 
-#####二、为两个不同的应用添加不同的AppIcon和LaunchScreen.storyboard
-1、进入Assets.xcassets 右键创建不同的AppIcon
+--------
+####二、为两个不同的应用添加不同的AppIcon和LaunchScreen.storyboard    
+#####1、进入Assets.xcassets 右键创建不同的AppIcon
 <p align="left">
   <img width="500" src="Res/WX20191024-162335@2x.png" hspace="1px" />
 </p>
-1.1 这边需要把两者都勾选上，否则会出现`编译的不同Target的时候会获取不到资源的情况`
+<font color=#FF0000 size=3>* 这边需要把两者都勾选上，否则会出现`编译的不同Target的时候会获取不到资源的情况`</font>
 <p align="left">
-  <img width="500" src="Res/WX20191024-163406@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-163406@2x.png" hspace="1px" />
 </p>
-2、创建不同的LaunchScreen.storyboard
+#####2、创建不同的LaunchScreen.storyboard
 <p align="left">
-  <img width="500" src="Res/WX20191024-162722@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-162722@2x.png" hspace="1px" />
 </p>
-保存在相对应的Target当中
+######保存在相对应的Target当中
 <p align="left">
-  <img width="500" src="Res/WX20191024-162908@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-162908@2x.png" hspace="1px" />
 </p>
-3、选择相对应的AppIcon和LaunchScreen.storyboard
-KJMoreTargetDemo对应的AppIcon和LaunchScreen.storyboard
+#####3、选择相对应的AppIcon和LaunchScreen.storyboard
+<font color=#FF0000 size=2>* KJMoreTargetDemo对应的AppIcon和LaunchScreen.storyboard</font>
 <p align="left">
-  <img width="500" src="Res/WX20191024-162131@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-162131@2x.png" hspace="1px" />
 </p>
-KJMoreTargetDemo copy对应的AppIcon-2和LaunchScreen2.storyboard
+<font color=#FF0000 size=2>* KJMoreTargetDemo copy对应的AppIcon-2和LaunchScreen2.storyboard</font>
 <p align="left">
-  <img width="500" src="Res/WX20191024-163127@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-163127@2x.png" hspace="1px" />
 </p>
-4、选择不同的Target运行项目
+#####4、选择不同的Target运行项目
 
-
-#####三、代码里面利用宏定义来区分不同的Traget
-1、在Bundle Setting里面设置一下Proprecessor Macros添加一份`TARGET`和`TARGET2`的参数来区分到底是那个Traget
-KJMoreTargetDemo对应的Proprecessor Macros
+------
+####三、代码里面利用宏定义来区分不同的Traget
+#####1、在Bundle Setting里面设置一下Proprecessor Macros添加一份`TARGET`和`TARGET2`的参数来区分到底是那个Traget
+<font color=#FF0000 size=2>* KJMoreTargetDemo对应的Proprecessor Macros</font>
 <p align="left">
-  <img width="500" src="Res/WX20191024-164811@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-164811@2x.png" hspace="1px" />
 </p>
-KJMoreTargetDemo copy对应的Proprecessor Macros
+<font color=#FF0000 size=2>* KJMoreTargetDemo copy对应的Proprecessor Macros</font>
 <p align="left">
-  <img width="500" src="Res/WX20191024-164828@2x.png" hspace="1px" />
+  <img width="400" src="Res/WX20191024-164828@2x.png" hspace="1px" />
 </p>
 >备注：TARGET 和 TARGET2 后面代码块里面会使用到
 
-2、代码里面用上面的宏去判断代码块  
+
+#####2、代码里面用上面的宏去判断代码块  
 解决一些需要不同处理方式，则用下面这一组宏
 
 ```
@@ -100,9 +110,3 @@ KJMoreTargetDemo copy对应的Proprecessor Macros
     [self.navigationController pushViewController:vc animated:YES];
 #endif
 ```
-
-####四、运行效果
-啤酒Demo 和 鱼Demo 就是两个对应的项目
-<p align="left">
-  <img width="200" src="Res/691571909388.jpg" hspace="1px" />
-</p>

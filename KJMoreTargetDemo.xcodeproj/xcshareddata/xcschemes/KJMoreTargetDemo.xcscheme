@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "68F016F12361869F00EE7ABF"
-               BuildableName = "KJMoreTargetDemo.app"
+               BuildableName = "&#x5564;&#x9152;Demo.app"
                BlueprintName = "KJMoreTargetDemo"
                ReferencedContainer = "container:KJMoreTargetDemo.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "68F016F12361869F00EE7ABF"
-            BuildableName = "KJMoreTargetDemo.app"
+            BuildableName = "&#x5564;&#x9152;Demo.app"
             BlueprintName = "KJMoreTargetDemo"
             ReferencedContainer = "container:KJMoreTargetDemo.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "68F016F12361869F00EE7ABF"
-            BuildableName = "KJMoreTargetDemo.app"
+            BuildableName = "&#x5564;&#x9152;Demo.app"
             BlueprintName = "KJMoreTargetDemo"
             ReferencedContainer = "container:KJMoreTargetDemo.xcodeproj">
          </BuildableReference>
